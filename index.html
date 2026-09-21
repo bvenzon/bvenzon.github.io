@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio & Writeups</title>
+    <title>Bruno Venzon | Portfólio & Writeups</title>
+    <!-- Favicon com o Joker -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🃏</text></svg>">
     <style>
         :root {
             --bg-color: #0d1117;
             --card-bg: #161b22;
             --text-color: #c9d1d9;
+            --text-muted: #8b949e;
             --accent-color: #58a6ff;
             --border-color: #30363d;
         }
@@ -20,9 +23,10 @@
             padding: 2rem;
             display: flex;
             justify-content: center;
+            line-height: 1.6;
         }
         .container {
-            max-width: 700px;
+            max-width: 800px;
             width: 100%;
         }
         header {
@@ -31,21 +35,52 @@
             margin-bottom: 2rem;
         }
         h1 {
-            margin: 0 0 0.5rem 0;
+            margin: 0 0 0.25rem 0;
             color: #ffffff;
-            font-size: 2rem;
+            font-size: 2.2rem;
         }
-        p.bio {
-            margin: 0;
-            color: #8b949e;
+        p.subtitle {
+            margin: 0 0 1rem 0;
+            color: var(--accent-color);
             font-size: 1.1rem;
+            font-weight: 500;
+        }
+        .badges-container {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+        .badge {
+            background-color: rgba(88, 166, 255, 0.1);
+            color: var(--accent-color);
+            border: 1px solid rgba(88, 166, 255, 0.3);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
         }
         .section-title {
-            font-size: 1.25rem;
+            font-size: 1.35rem;
             color: #ffffff;
+            margin-top: 2.5rem;
             margin-bottom: 1rem;
             border-left: 3px solid var(--accent-color);
-            padding-left: 0.5rem;
+            padding-left: 0.75rem;
+        }
+        .bio-box {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--text-color);
+        }
+        .bio-box p {
+            margin-top: 0;
+        }
+        .bio-box p:last-child {
+            margin-bottom: 0;
         }
         ul {
             list-style: none;
@@ -57,11 +92,12 @@
             border: 1px solid var(--border-color);
             border-radius: 6px;
             margin-bottom: 0.75rem;
-            padding: 1rem;
-            transition: border-color 0.2s;
+            padding: 1rem 1.25rem;
+            transition: border-color 0.2s, transform 0.1s;
         }
         li:hover {
             border-color: var(--accent-color);
+            transform: translateY(-2px);
         }
         a {
             color: var(--accent-color);
@@ -73,9 +109,31 @@
         }
         .desc {
             font-size: 0.9rem;
-            color: #8b949e;
+            color: var(--text-muted);
             margin-top: 0.3rem;
             margin-bottom: 0;
+        }
+        .tags-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: 0.5rem;
+        }
+        .tag {
+            background-color: #21262d;
+            color: var(--text-muted);
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            border: 1px solid var(--border-color);
+        }
+        footer {
+            border-top: 1px solid var(--border-color);
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
         }
     </style>
 </head>
@@ -83,33 +141,77 @@
 
     <div class="container">
         <header>
-            <h1>Bruno Venzon</h1>
-            <p class="bio">Information Security Professional & CTI Analyst</p>
+            <h1>Bruno Teixeira Venzon</h1>
+            <p class="subtitle">Information Security Professional & Blue Team Analyst</p>
+            <div class="badges-container">
+                <span class="badge">eJPT</span>
+                <span class="badge">CompTIA Security+</span>
+                <span class="badge">SOC & CTI</span>
+            </div>
         </header>
+
+        <div class="section-title">Sobre Mim</div>
+        <div class="bio-box">
+            <p>Profissional de Cibersegurança com experiência em Security Operations Center (SOC), atuando principalmente em Blue Team, Gestão e Resposta a Incidentes, Monitoramento de Segurança e Threat Intelligence. Possuo experiência prática na identificação, análise, investigação, contenção e resposta a eventos de segurança, com foco na redução de riscos e proteção de ambientes críticos.</p>
+            <p style="margin-top: 1rem;">Ao longo da minha trajetória, desenvolvi uma visão analítica e orientada à investigação, combinando forte atuação em Blue Team com estudos e prática em Offensive Security, Red Team, Web Security e Bug Bounty. Meu objetivo é continuar evoluindo tecnicamente e atuar na identificação de vulnerabilidades e ameaças sob diferentes perspectivas.</p>
+        </div>
+
+        <div class="section-title">Principais Áreas de Atuação</div>
+        <div class="tags-grid" style="margin-bottom: 2rem;">
+            <span class="tag">Blue Team & Security Operations</span>
+            <span class="tag">Incident Response</span>
+            <span class="tag">Threat Intelligence / CTI</span>
+            <span class="tag">Threat Hunting</span>
+            <span class="tag">SIEM / EDR / XDR</span>
+            <span class="tag">Análise de IOCs</span>
+            <span class="tag">Automação de Processos</span>
+            <span class="tag">Offensive Security & Red Team</span>
+            <span class="tag">Web Security & Bug Bounty</span>
+        </div>
+
+        <div class="section-title">Artigos & Publicações</div>
+        <ul>
+            <li>
+                <a href="https://www.scunna.com/diagnostico-de-risco-por-dentro-das-ameacas-digitais-no-setor-de-saude/" target="_blank">Diagnóstico de risco: por dentro das ameaças digitais no setor de saúde</a>
+                <p class="desc">Análise sobre ameaças emergentes e o impacto de incidentes no setor da saúde.</p>
+            </li>
+            <li>
+                <a href="https://www.scunna.com/honeypot-mais-que-armadilhas-inteligencia-de-ameacas/" target="_blank">Honeypot: mais que armadilhas, inteligência de ameaças</a>
+                <p class="desc">Explorando o papel dos honeypots na coleta ativa de dados e inteligência de ameaças (CTI).</p>
+            </li>
+        </ul>
 
         <div class="section-title">Plataformas & Perfis</div>
         <ul>
             <li>
-                <a href="https://hackerone.com" target="_blank">HackerOne</a>
-                <p class="desc">Acompanhamento de relatórios e atividades em Bug Bounty.</p>
+                <a href="https://hackerone.com/bvenzon" target="_blank">HackerOne</a>
+                <p class="desc">Atividades em Bug Bounty e submissões em programas de divulgação coordenada de vulnerabilidades (VDP).</p>
             </li>
             <li>
-                <a href="https://tryhackme.com" target="_blank">TryHackMe</a>
-                <p class="desc">Estatísticas, badges e resolução de salas.</p>
+                <a href="https://tryhackme.com/p/BVENZON" target="_blank">TryHackMe</a>
+                <p class="desc">Estatísticas de laboratórios, resolução de salas e evolução técnica em segurança.</p>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/bruno-venzon" target="_blank">LinkedIn</a>
+                <p class="desc">Conexões profissionais e histórico de carreira em tecnologia e segurança.</p>
             </li>
             <li>
                 <a href="https://github.com/bvenzon" target="_blank">GitHub</a>
-                <p class="desc">Repositórios de ferramentas de automação e scripts.</p>
+                <p class="desc">Repositórios de scripts de automação, ferramentas defensivas e utilitários em Python.</p>
             </li>
         </ul>
 
-        <div class="section-title">Writeups & Artigos</div>
+        <div class="section-title">Writeups & Labs</div>
         <ul>
             <li>
-                <a href="#">Em breve: Writeups de CTF e labs</a>
-                <p class="desc">Resoluções detalhadas de vulnerabilidades e máquinas.</p>
+                <a href="#">Em breve: Writeups de CTF</a>
+                <p class="desc">Resoluções passo a passo de máquinas e desafios práticos.</p>
             </li>
         </ul>
+
+        <footer>
+            <p>&copy; 2026 Bruno Teixeira Venzon. Desenvolvido com GitHub Pages.</p>
+        </footer>
     </div>
 
 </body>
