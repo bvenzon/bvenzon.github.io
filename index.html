@@ -3,515 +3,452 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bruno Venzon | Portfólio & Writeups</title>
-    <!-- Favicon com o Joker -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🃏</text></svg>">
+    <title>Bruno Teixeira Venzon | Information Security Professional</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #0a0e27;
-            --card-bg: #111d3c;
-            --text-color: #e0e6ff;
-            --text-muted: #a0aec0;
-            --accent-color: #00d9ff;
-            --accent-secondary: #7c3aed;
-            --border-color: #1e3a5f;
-            --glow-color: #00d9ff;
+            --bg-color: #0b0c10;
+            --card-bg: #1f2833;
+            --text-main: #c5c6c7;
+            --text-bright: #ffffff;
+            --accent-green: #00ff66;
+            --accent-blue: #66fcf1;
+            --accent-purple: #9b51e0;
+            --border-color: #2c3848;
         }
 
-        @keyframes glow-pulse {
-            0%, 100% { text-shadow: 0 0 10px rgba(0, 217, 255, 0.5); }
-            50% { text-shadow: 0 0 20px rgba(0, 217, 255, 0.8); }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
-
-        @keyframes float-in {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes gradient-shift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        @keyframes border-glow {
-            0%, 100% { border-color: rgba(0, 217, 255, 0.3); box-shadow: 0 0 10px rgba(0, 217, 255, 0.1); }
-            50% { border-color: rgba(0, 217, 255, 0.6); box-shadow: 0 0 20px rgba(0, 217, 255, 0.2); }
-        }
-
-        * { box-sizing: border-box; }
 
         body {
-            font-family: 'Courier New', monospace;
-            background: linear-gradient(135deg, #0a0e27 0%, #1a1f4b 50%, #0f1a3d 100%);
-            background-attachment: fixed;
-            color: var(--text-color);
-            margin: 0;
-            padding: 2rem 1rem;
-            display: flex;
-            justify-content: center;
-            line-height: 1.7;
-            min-height: 100vh;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            padding: 20px;
         }
 
         .container {
-            display: grid;
-            grid-template-columns: 1fr 300px;
-            gap: 2rem;
-            max-width: 1200px;
-            width: 100%;
-            animation: float-in 0.8s ease-out;
-        }
-
-        .main-content {
-            min-width: 0;
-        }
-
-        .sidebar {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        .hall-fama, .competencies-sidebar {
-            background: linear-gradient(135deg, rgba(17, 29, 60, 0.8), rgba(30, 58, 95, 0.4));
-            border: 2px solid var(--border-color);
-            border-radius: 12px;
-            padding: 1.5rem;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 8px 32px rgba(0, 217, 255, 0.1);
-            animation: float-in 1s ease-out;
-            position: sticky;
-            top: 2rem;
-        }
-
-        .hall-fama:hover, .competencies-sidebar:hover {
-            border-color: var(--accent-color);
-            box-shadow: 0 8px 32px rgba(0, 217, 255, 0.2);
-        }
-
-        .sidebar-title {
-            font-size: 1rem;
-            color: #ffffff;
-            margin: 0 0 1rem 0;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 800;
-            border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 0.75rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
             position: relative;
         }
 
-        .sidebar-title::before {
-            content: '';
+        .sidebar-right {
             position: absolute;
-            left: 0;
-            bottom: -2px;
-            width: 40px;
-            height: 2px;
-            background: linear-gradient(90deg, var(--accent-color), var(--accent-secondary));
-        }
-
-        .company-item {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 1rem;
-            padding: 0.75rem;
-            background: rgba(0, 217, 255, 0.05);
-            border-radius: 8px;
-            border-left: 3px solid var(--accent-color);
-            transition: all 0.2s ease;
-        }
-
-        .company-item:hover {
-            background: rgba(0, 217, 255, 0.1);
-            transform: translateX(5px);
-        }
-
-        .company-icon {
-            font-size: 1.5rem;
-            min-width: 2rem;
-            text-align: center;
-        }
-
-        .company-name {
-            font-weight: 700;
-            color: var(--accent-color);
-            font-size: 0.9rem;
-        }
-
-        .competencies-list {
+            top: 320px;
+            right: 20px;
+            width: 350px;
             display: flex;
             flex-direction: column;
-            gap: 0.5rem;
+            gap: 20px;
         }
 
-        .comp-item {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            padding: 0.4rem 0.6rem;
-            background: rgba(0, 217, 255, 0.05);
-            border-radius: 4px;
-            border-left: 2px solid var(--accent-secondary);
-            transition: all 0.2s ease;
-        }
-
-        .comp-item:hover {
-            color: var(--accent-color);
-            background: rgba(0, 217, 255, 0.1);
-            border-left-color: var(--accent-color);
-            transform: translateX(3px);
+        .main-content {
+            max-width: 750px;
+            margin-right: 400px;
         }
 
         @media (max-width: 1024px) {
-            .container {
-                grid-template-columns: 1fr;
-            }
-
-            .sidebar {
-                grid-column: 1;
-                grid-row: 1;
-                grid-auto-flow: column;
-                gap: 1rem;
-                margin-bottom: 2rem;
+            .sidebar-right {
+                position: static;
+                width: 100%;
+                margin-top: 30px;
             }
 
             .main-content {
-                grid-column: 1;
-                grid-row: 2;
+                max-width: 100%;
+                margin-right: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sidebar-right {
+                width: 100%;
             }
 
-            .hall-fama, .competencies-sidebar {
-                position: relative;
-                top: 0;
+            .main-content {
+                width: 100%;
             }
         }
 
         header {
-            border-bottom: 2px solid var(--accent-color);
-            border-bottom-left-radius: 20px;
-            padding-bottom: 2rem;
-            margin-bottom: 3rem;
-            background: linear-gradient(90deg, rgba(0, 217, 255, 0.05), transparent);
-            padding-left: 2rem;
-            animation: border-glow 3s ease-in-out infinite;
+            text-align: center;
+            margin-bottom: 50px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 30px;
         }
 
         h1 {
-            margin: 0 0 0.5rem 0;
-            background: linear-gradient(120deg, #00d9ff, #7c3aed, #00d9ff);
-            background-size: 200% 200%;
-            animation: gradient-shift 6s ease infinite;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-size: 2.8rem;
-            font-weight: 900;
-            letter-spacing: -1px;
+            font-family: 'Fira Code', monospace;
+            color: var(--text-bright);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
         }
 
-        p.subtitle {
-            margin: 0.5rem 0 1.5rem 0;
-            color: var(--accent-color);
+        h1 span {
+            color: var(--accent-green);
+        }
+
+        header p {
             font-size: 1.2rem;
-            font-weight: 600;
-            animation: glow-pulse 2s ease-in-out infinite;
-            letter-spacing: 2px;
+            color: var(--accent-blue);
+            margin-bottom: 20px;
+            font-family: 'Fira Code', monospace;
         }
 
-        .badges-container {
+        .badges {
             display: flex;
-            gap: 0.75rem;
+            justify-content: center;
+            gap: 10px;
             flex-wrap: wrap;
-            margin-top: 1.5rem;
+            margin-bottom: 20px;
         }
 
         .badge {
-            background: linear-gradient(135deg, rgba(0, 217, 255, 0.15), rgba(124, 58, 237, 0.15));
-            color: var(--accent-color);
-            border: 2px solid var(--accent-color);
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
+            background-color: var(--card-bg);
+            color: var(--accent-green);
+            font-family: 'Fira Code', monospace;
+            padding: 6px 14px;
+            border-radius: 4px;
             font-size: 0.85rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            border: 1px solid rgba(0, 255, 102, 0.3);
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            background: transparent;
+            color: var(--accent-blue);
+            border: 1px solid var(--accent-blue);
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
             transition: all 0.3s ease;
-            cursor: default;
         }
 
-        .badge:hover {
-            background: linear-gradient(135deg, rgba(0, 217, 255, 0.25), rgba(124, 58, 237, 0.25));
-            box-shadow: 0 0 20px rgba(0, 217, 255, 0.4);
-            transform: translateY(-2px);
+        .btn:hover {
+            background: var(--accent-blue);
+            color: var(--bg-color);
+            box-shadow: 0 0 15px rgba(102, 252, 241, 0.4);
         }
 
-        .section-title {
-            font-size: 1.5rem;
-            color: #ffffff;
-            margin-top: 3rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-            padding-left: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            font-weight: 800;
+        section {
+            margin-bottom: 40px;
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 30px;
+            border: 1px solid var(--border-color);
         }
 
-        .section-title::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 4px;
-            height: 100%;
-            background: linear-gradient(180deg, var(--accent-color), var(--accent-secondary));
-            border-radius: 2px;
-            box-shadow: 0 0 10px var(--accent-color);
+        .hof-section {
+            background: linear-gradient(135deg, #1f2833 0%, rgba(0, 255, 102, 0.03) 100%);
+            border: 1px solid rgba(0, 255, 102, 0.15);
         }
 
-        .bio-box {
-            background: linear-gradient(135deg, rgba(17, 29, 60, 0.8), rgba(30, 58, 95, 0.4));
-            border: 2px solid var(--border-color);
-            border-radius: 12px;
-            padding: 2rem;
-            margin-bottom: 2.5rem;
-            color: var(--text-color);
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 32px rgba(0, 217, 255, 0.1);
+        h2 {
+            font-family: 'Fira Code', monospace;
+            color: var(--text-bright);
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .bio-box:hover {
-            border-color: var(--accent-color);
-            box-shadow: 0 8px 32px rgba(0, 217, 255, 0.2);
-            transform: translateY(-2px);
+        h2::before {
+            content: '>';
+            color: var(--accent-green);
         }
 
-        .bio-box p {
-            margin-top: 0;
+        p {
+            margin-bottom: 15px;
         }
 
-        .bio-box p:last-child {
-            margin-bottom: 0;
-        }
+
 
         ul {
             list-style: none;
-            padding: 0;
-            margin: 0 0 2.5rem 0;
         }
 
         li {
-            background: linear-gradient(135deg, rgba(17, 29, 60, 0.7), rgba(30, 58, 95, 0.3));
-            border: 2px solid var(--border-color);
-            border-radius: 10px;
-            margin-bottom: 1rem;
-            padding: 1.5rem;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            position: relative;
-            overflow: hidden;
+            margin-bottom: 20px;
         }
 
-        li::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 3px;
-            background: linear-gradient(180deg, var(--accent-color), var(--accent-secondary));
-            transform: scaleY(0);
-            transform-origin: top;
-            transition: transform 0.3s ease;
-        }
-
-        li:hover {
-            border-color: var(--accent-color);
-            background: linear-gradient(135deg, rgba(0, 217, 255, 0.1), rgba(124, 58, 237, 0.1));
-            box-shadow: 0 8px 32px rgba(0, 217, 255, 0.15);
-            transform: translateX(5px);
-        }
-
-        li:hover::before {
-            transform: scaleY(1);
-        }
-
-        a {
-            color: var(--accent-color);
-            text-decoration: none;
-            font-weight: 700;
-            transition: all 0.2s ease;
-            position: relative;
-        }
-
-        a::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent-color);
-            transition: width 0.3s ease;
-        }
-
-        a:hover::after {
-            width: 100%;
-        }
-
-        a:hover {
-            color: #ffffff;
-            text-shadow: 0 0 10px var(--accent-color);
-        }
-
-        .desc {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-top: 0.5rem;
+        li:last-child {
             margin-bottom: 0;
-            font-style: italic;
         }
 
-        .tags-grid {
+        a.link-item {
+            color: var(--text-bright);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: inline-block;
+            margin-bottom: 5px;
+            transition: color 0.2s;
+        }
+
+        a.link-item:hover {
+            color: var(--accent-green);
+        }
+
+        .item-desc {
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .skills-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.6rem;
-            margin-bottom: 2.5rem;
+            gap: 10px;
         }
 
-        .tag {
-            background: linear-gradient(135deg, rgba(0, 217, 255, 0.1), rgba(124, 58, 237, 0.1));
-            color: var(--accent-color);
-            padding: 0.4rem 0.8rem;
-            border-radius: 6px;
-            font-size: 0.75rem;
-            border: 1px solid rgba(0, 217, 255, 0.3);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 600;
-            transition: all 0.2s ease;
-            cursor: default;
+        .skill-tag {
+            background: rgba(102, 252, 241, 0.1);
+            color: var(--accent-blue);
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-family: 'Fira Code', monospace;
+            border: 1px solid rgba(102, 252, 241, 0.2);
         }
 
-        .tag:hover {
-            background: linear-gradient(135deg, rgba(0, 217, 255, 0.2), rgba(124, 58, 237, 0.2));
-            border-color: var(--accent-color);
-            box-shadow: 0 0 10px rgba(0, 217, 255, 0.2);
+        .hof-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .hof-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, rgba(0, 255, 102, 0.08) 0%, rgba(102, 252, 241, 0.08) 100%);
+            padding: 14px 16px;
+            border-radius: 8px;
+            border: 1px solid rgba(0, 255, 102, 0.2);
+            border-left: 3px solid var(--accent-green);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .hof-item:hover {
+            background: linear-gradient(135deg, rgba(0, 255, 102, 0.15) 0%, rgba(102, 252, 241, 0.15) 100%);
+            transform: translateX(4px);
+            border-left-color: var(--accent-blue);
+            box-shadow: 0 4px 12px rgba(0, 255, 102, 0.1);
+        }
+
+        .hof-item span {
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .hof-item div {
+            flex: 1;
+        }
+
+        .hof-item strong {
+            color: var(--accent-green);
+            font-weight: 700;
+        }
+        
+        a.hof-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, rgba(0, 255, 102, 0.08) 0%, rgba(102, 252, 241, 0.08) 100%);
+            padding: 14px 16px;
+            border-radius: 8px;
+            border: 1px solid rgba(0, 255, 102, 0.2);
+            border-left: 3px solid var(--accent-green);
+            transition: all 0.3s ease;
+        }
+        
+        a.hof-item:hover {
+            background: linear-gradient(135deg, rgba(0, 255, 102, 0.15) 0%, rgba(102, 252, 241, 0.15) 100%);
+            transform: translateX(4px);
+            border-left-color: var(--accent-blue);
+            box-shadow: 0 4px 12px rgba(0, 255, 102, 0.1);
+        }
+
+        .edu-item {
+            margin-bottom: 0;
+            background: linear-gradient(135deg, rgba(102, 252, 241, 0.05) 0%, rgba(155, 81, 224, 0.05) 100%);
+            padding: 18px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-blue);
+            transition: all 0.3s ease;
+        }
+
+        .edu-item:hover {
+            background: linear-gradient(135deg, rgba(102, 252, 241, 0.1) 0%, rgba(155, 81, 224, 0.1) 100%);
+            transform: translateX(5px);
+            border-left-color: var(--accent-green);
+        }
+
+        .edu-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .edu-title {
+            color: var(--text-bright);
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 6px;
+        }
+
+        .edu-school {
+            color: var(--accent-blue);
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .edu-date {
+            font-size: 0.8rem;
+            color: #8892b0;
+            font-family: 'Fira Code', monospace;
+        }
+        
+        .education-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
         }
 
         footer {
-            border-top: 2px solid var(--accent-color);
-            margin-top: 4rem;
-            padding-top: 2rem;
             text-align: center;
-            color: var(--text-muted);
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
             font-size: 0.85rem;
-            animation: border-glow 3s ease-in-out infinite;
-        }
-
-        @media (max-width: 600px) {
-            h1 { font-size: 2rem; }
-            .section-title { font-size: 1.2rem; }
-            header { padding-left: 1rem; }
+            color: #8892b0;
+            font-family: 'Fira Code', monospace;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <div class="main-content">
         <header>
-            <h1>Bruno Teixeira Venzon</h1>
-            <p class="subtitle">Information Security Professional & Blue Team Analyst</p>
-            <div class="badges-container">
-                <span class="badge">eJPT</span>
+            <h1>Bruno Teixeira <span>Venzon</span></h1>
+            <p>Information Security Professional & Blue Team Analyst</p>
+            <div class="badges">
+                <span class="badge">eJPT Certified</span>
                 <span class="badge">SOC & CTI</span>
+                <span class="badge">Offensive Security (FIAP)</span>
+            </div>
+            <div class="cta-buttons">
+                <a href="https://www.linkedin.com/in/bruno-venzon" target="_blank" class="btn">LinkedIn</a>
+                <a href="https://github.com/bvenzon" target="_blank" class="btn">GitHub</a>
+                <a href="https://hackerone.com/bvenzon" target="_blank" class="btn">HackerOne</a>
             </div>
         </header>
 
-        <div class="section-title">Sobre Mim</div>
-        <div class="bio-box">
-            <p>Profissional de Cibersegurança com experiência em Security Operations Center (SOC), atuando principalmente em Blue Team, Gestão e Resposta a Incidentes, Monitoramento de Segurança e Threat Intelligence. Possuo experiência prática na identificação, análise, investigação, contenção e resposta a eventos de segurança, com foco na redução de riscos e proteção de ambientes críticos.</p>
-            <p style="margin-top: 1rem;">Ao longo da minha trajetória, desenvolvi uma visão analítica e orientada à investigação, combinando forte atuação em Blue Team com estudos e prática em Offensive Security, Red Team, Web Security e Bug Bounty. Meu objetivo é continuar evoluindo tecnicamente e atuar na identificação de vulnerabilidades e ameaças sob diferentes perspectivas.</p>
+        <section class="main-content">
+            <h2>Sobre Mim</h2>
+            <p>Profissional de Cibersegurança com experiência em Security Operations Center (SOC), atuando principalmente em Blue Team, Gestão e Resposta a Incidentes, Monitoramento de Segurança e Threat Intelligence. Possuo vivência prática na identificação, análise, investigação, contenção e resposta a eventos de segurança, com foco na redução de riscos e proteção de ambientes críticos.</p>
+            <p>Ao longo da minha trajetória, desenvolvi uma visão analítica e orientada à investigação, combinando forte atuação defensiva com estudos e prática em Offensive Security, Red Team, Web Security e Bug Bounty.</p>
+        </section>
+
+        <section class="main-content">
+            <h2>Top Skills</h2>
+            <div class="skills-grid">
+                <span class="skill-tag">Incident Response</span>
+                <span class="skill-tag">Blue Team Ops</span>
+                <span class="skill-tag">SIEM & EDR</span>
+                <span class="skill-tag">Threat Hunting</span>
+                <span class="skill-tag">IOC Analysis</span>
+                <span class="skill-tag">Gestão de Vulnerabilidades</span>
+                <span class="skill-tag">Threat Intelligence (CTI)</span>
+                <span class="skill-tag">Automação (Python)</span>
+                <span class="skill-tag">Offensive Security</span>
+                <span class="skill-tag">Bug Bounty</span>
+            </div>
+        </section>
+
+        <section class="main-content">
+            <h2>Artigos & Publicações</h2>
+            <ul>
+                <li>
+                    <a href="https://www.scunna.com/diagnostico-de-risco-por-dentro-das-ameacas-digitais-no-setor-de-saude/" target="_blank" class="link-item">Diagnóstico de risco: por dentro das ameaças digitais no setor de saúde</a>
+                    <p class="item-desc">Análise sobre ameaças emergentes e o impacto de incidentes no setor da saúde.</p>
+                </li>
+                <li>
+                    <a href="https://www.scunna.com/honeypot-mais-que-armadilhas-inteligencia-de-ameacas/" target="_blank" class="link-item">Honeypot: mais que armadilhas, inteligência de ameaças</a>
+                    <p class="item-desc">Explorando o papel dos honeypots na coleta ativa de dados e inteligência de ameaças (CTI).</p>
+                </li>
+            </ul>
+        </section>
+
+        <section class="main-content">
+            <h2>Plataformas & Perfis</h2>
+            <ul>
+                <li>
+                    <a href="https://hackerone.com/bvenzon" target="_blank" class="link-item">HackerOne</a>
+                    <p class="item-desc">Atividades em Bug Bounty e submissões em programas de divulgação coordenada de vulnerabilidades (VDP).</p>
+                </li>
+                <li>
+                    <a href="https://tryhackme.com/p/BVENZON" target="_blank" class="link-item">TryHackMe</a>
+                    <p class="item-desc">Estatísticas de laboratórios, resolução de salas e evolução técnica contínua.</p>
+                </li>
+                <li>
+                    <a href="https://github.com/bvenzon" target="_blank" class="link-item">GitHub</a>
+                    <p class="item-desc">Repositórios de scripts de automação, ferramentas defensivas e utilitários em Python.</p>
+                </li>
+            </ul>
+        </section>
+
+        <div class="sidebar-right">
+            <section class="hof-section">
+                <h2>🏆 Hall da Fama</h2>
+                <div class="hof-list">
+                    <a href="https://csirt.globo/divulgacao-responsavel" target="_blank" class="hof-item" style="text-decoration: none; cursor: pointer;">
+                        <span>🌍</span>
+                        <div><strong>Globo</strong><br><span style="font-size: 0.85rem; color: var(--text-main);">Reconhecimento em VDP</span></div>
+                    </a>
+                    <a href="https://www.ericsson.com/en/about-us/security/vulnerability-reporting-form/acknowledgements" target="_blank" class="hof-item" style="text-decoration: none; cursor: pointer;">
+                        <span>📡</span>
+                        <div><strong>Ericsson</strong><br><span style="font-size: 0.85rem; color: var(--text-main);">Reconhecimento em VDP</span></div>
+                    </a>
+                </div>
+            </section>
+
+            <section>
+                <h2>Formação & Educação</h2>
+                <div class="education-container">
+                    <div class="edu-item">
+                        <div class="edu-title">📚 Pós-graduação Lato Sensu</div>
+                        <div class="edu-school">Offensive Cyber Security - Red Team Operations</div>
+                        <div style="color: var(--accent-green); font-size: 0.9rem; margin: 6px 0;">FIAP</div>
+                        <div class="edu-date">Jan 2026 – Dez 2026</div>
+                    </div>
+                    <div class="edu-item">
+                        <div class="edu-title">🎓 Bacharelado</div>
+                        <div class="edu-school">Sistemas de Informação</div>
+                        <div style="color: var(--accent-green); font-size: 0.9rem; margin: 6px 0;">Universidade do Vale do Rio dos Sinos (Unisinos)</div>
+                        <div class="edu-date">2022 – 2025</div>
+                    </div>
+                </div>
+            </section>
         </div>
-
-        <div class="section-title">Artigos & Publicações</div>
-        <ul>
-            <li>
-                <a href="https://www.scunna.com/diagnostico-de-risco-por-dentro-das-ameacas-digitais-no-setor-de-saude/" target="_blank">Diagnóstico de risco: por dentro das ameaças digitais no setor de saúde</a>
-                <p class="desc">Análise sobre ameaças emergentes e o impacto de incidentes no setor da saúde.</p>
-            </li>
-            <li>
-                <a href="https://www.scunna.com/honeypot-mais-que-armadilhas-inteligencia-de-ameacas/" target="_blank">Honeypot: mais que armadilhas, inteligência de ameaças</a>
-                <p class="desc">Explorando o papel dos honeypots na coleta ativa de dados e inteligência de ameaças (CTI).</p>
-            </li>
-        </ul>
-
-        <div class="section-title">Plataformas & Perfis</div>
-        <ul>
-            <li>
-                <a href="https://hackerone.com/bvenzon" target="_blank">HackerOne</a>
-                <p class="desc">Atividades em Bug Bounty e submissões em programas de divulgação coordenada de vulnerabilidades (VDP).</p>
-            </li>
-            <li>
-                <a href="https://tryhackme.com/p/BVENZON" target="_blank">TryHackMe</a>
-                <p class="desc">Estatísticas de laboratórios, resolução de salas e evolução técnica em segurança.</p>
-            </li>
-            <li>
-                <a href="https://www.linkedin.com/in/bruno-venzon" target="_blank">LinkedIn</a>
-                <p class="desc">Conexões profissionais e histórico de carreira em tecnologia e segurança.</p>
-            </li>
-            <li>
-                <a href="https://github.com/bvenzon" target="_blank">GitHub</a>
-                <p class="desc">Repositórios de scripts de automação, ferramentas defensivas e utilitários em Python.</p>
-            </li>
-        </ul>
-
-        <div class="section-title">Writeups & Labs</div>
-        <ul>
-            <li>
-                <a href="#">Em breve: Writeups de CTF</a>
-                <p class="desc">Resoluções passo a passo de máquinas e desafios práticos.</p>
-            </li>
-        </ul>
 
         <footer>
-            <p>&copy; 2026 Bruno Teixeira Venzon. Desenvolvido com GitHub Pages.</p>
+            <p>© 2026 Bruno Teixeira Venzon. Todos os direitos reservados.</p>
         </footer>
-        </div>
-
-        <div class="sidebar">
-            <div class="hall-fama">
-                <div class="sidebar-title">🏆 Hall da Fama</div>
-                <div class="company-item">
-                    <div class="company-icon">🌍</div>
-                    <div class="company-name">Globo</div>
-                </div>
-                <div class="company-item">
-                    <div class="company-icon">📡</div>
-                    <div class="company-name">Ericsson</div>
-                </div>
-            </div>
-
-            <div class="competencies-sidebar">
-                <div class="sidebar-title">⚡ Top Skills</div>
-                <div class="competencies-list">
-                    <div class="comp-item">🔍 Incident Response</div>
-                    <div class="comp-item">🛡️ Blue Team Ops</div>
-                    <div class="comp-item">📊 SIEM & EDR</div>
-                    <div class="comp-item">🎯 Threat Hunting</div>
-                    <div class="comp-item">🔗 IOC Analysis</div>
-                    <div class="comp-item">⚠️ Gestão de Vulnerabilidades</div>
-                    <div class="comp-item">🧠 Threat Intelligence</div>
-                    <div class="comp-item">🤖 Automação</div>
-                    <div class="comp-item">🔓 Offensive Security</div>
-                    <div class="comp-item">🐛 Bug Bounty</div>
-                </div>
-            </div>
-        </div>
     </div>
 
 </body>
