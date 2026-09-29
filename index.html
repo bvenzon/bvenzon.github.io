@@ -17,11 +17,7 @@
             --border-color: #2c3848;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
             background-color: var(--bg-color);
@@ -31,12 +27,7 @@
             padding: 20px;
         }
 
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            position: relative;
-        }
+        .container { max-width: 1400px; margin: 0 auto; padding: 40px 20px; position: relative; }
 
         .sidebar-right {
             position: absolute;
@@ -48,32 +39,11 @@
             gap: 20px;
         }
 
-        .main-content {
-            max-width: 750px;
-            margin-right: 400px;
-        }
+        .main-content { max-width: 750px; margin-right: 400px; }
 
         @media (max-width: 1024px) {
-            .sidebar-right {
-                position: static;
-                width: 100%;
-                margin-top: 30px;
-            }
-
-            .main-content {
-                max-width: 100%;
-                margin-right: 0;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .sidebar-right {
-                width: 100%;
-            }
-
-            .main-content {
-                width: 100%;
-            }
+            .sidebar-right { position: static; width: 100%; margin-top: 30px; }
+            .main-content { max-width: 100%; margin-right: 0; }
         }
 
         header {
@@ -83,16 +53,8 @@
             padding-bottom: 30px;
         }
 
-        h1 {
-            font-family: 'Fira Code', monospace;
-            color: var(--text-bright);
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        h1 span {
-            color: var(--accent-green);
-        }
+        h1 { font-family: 'Fira Code', monospace; color: var(--text-bright); font-size: 2.5rem; margin-bottom: 10px; }
+        h1 span { color: var(--accent-green); }
 
         header p {
             font-size: 1.2rem;
@@ -101,13 +63,7 @@
             font-family: 'Fira Code', monospace;
         }
 
-        .badges {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
+        .badges { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
 
         .badge {
             background-color: var(--card-bg);
@@ -119,12 +75,7 @@
             border: 1px solid rgba(0, 255, 102, 0.3);
         }
 
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
+        .cta-buttons { display: flex; justify-content: center; gap: 15px; margin-top: 20px; flex-wrap: wrap; }
 
         .btn {
             background: transparent;
@@ -135,6 +86,7 @@
             text-decoration: none;
             font-family: 'Fira Code', monospace;
             font-size: 0.9rem;
+            cursor: pointer;
             transition: all 0.3s ease;
         }
 
@@ -167,30 +119,20 @@
             gap: 10px;
         }
 
-        h2::before {
-            content: '>';
-            color: var(--accent-green);
-        }
+        h2::before { content: '>'; color: var(--accent-green); }
 
-        p {
-            margin-bottom: 15px;
-        }
+        p { margin-bottom: 15px; }
+        p:last-child { margin-bottom: 0; }
+        ul { list-style: none; }
+        li { margin-bottom: 20px; }
+        li:last-child { margin-bottom: 0; }
 
-
-
-        ul {
-            list-style: none;
-        }
-
-        li {
-            margin-bottom: 20px;
-        }
-
-        li:last-child {
-            margin-bottom: 0;
-        }
-
-        a.link-item {
+        a.link-item, button.link-item {
+            background: none;
+            border: none;
+            padding: 0;
+            font-family: inherit;
+            cursor: pointer;
             color: var(--text-bright);
             text-decoration: none;
             font-weight: 600;
@@ -200,20 +142,28 @@
             transition: color 0.2s;
         }
 
-        a.link-item:hover {
+        a.link-item:hover, button.link-item:hover { color: var(--accent-green); }
+
+        .item-desc { font-size: 0.95rem; color: var(--text-main); }
+
+        /* Áreas de atuação */
+        .focus-list { columns: 2; column-gap: 30px; margin-top: 5px; }
+        .focus-list li {
+            margin-bottom: 8px;
+            font-size: 0.92rem;
+            break-inside: avoid;
+            padding-left: 18px;
+            position: relative;
+        }
+        .focus-list li::before {
+            content: '▹';
             color: var(--accent-green);
+            position: absolute;
+            left: 0;
         }
+        @media (max-width: 600px) { .focus-list { columns: 1; } }
 
-        .item-desc {
-            font-size: 0.95rem;
-            color: var(--text-main);
-        }
-
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
+        .skills-grid { display: flex; flex-wrap: wrap; gap: 10px; }
 
         .skill-tag {
             background: rgba(102, 252, 241, 0.1);
@@ -225,46 +175,8 @@
             border: 1px solid rgba(102, 252, 241, 0.2);
         }
 
-        .hof-list {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
+        .hof-list { display: flex; flex-direction: column; gap: 10px; }
 
-        .hof-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            background: linear-gradient(135deg, rgba(0, 255, 102, 0.08) 0%, rgba(102, 252, 241, 0.08) 100%);
-            padding: 14px 16px;
-            border-radius: 8px;
-            border: 1px solid rgba(0, 255, 102, 0.2);
-            border-left: 3px solid var(--accent-green);
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .hof-item:hover {
-            background: linear-gradient(135deg, rgba(0, 255, 102, 0.15) 0%, rgba(102, 252, 241, 0.15) 100%);
-            transform: translateX(4px);
-            border-left-color: var(--accent-blue);
-            box-shadow: 0 4px 12px rgba(0, 255, 102, 0.1);
-        }
-
-        .hof-item span {
-            font-size: 1.3rem;
-            flex-shrink: 0;
-        }
-
-        .hof-item div {
-            flex: 1;
-        }
-
-        .hof-item strong {
-            color: var(--accent-green);
-            font-weight: 700;
-        }
-        
         a.hof-item {
             display: flex;
             align-items: center;
@@ -275,8 +187,10 @@
             border: 1px solid rgba(0, 255, 102, 0.2);
             border-left: 3px solid var(--accent-green);
             transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
         }
-        
+
         a.hof-item:hover {
             background: linear-gradient(135deg, rgba(0, 255, 102, 0.15) 0%, rgba(102, 252, 241, 0.15) 100%);
             transform: translateX(4px);
@@ -284,8 +198,13 @@
             box-shadow: 0 4px 12px rgba(0, 255, 102, 0.1);
         }
 
+        a.hof-item > span { font-size: 1.3rem; flex-shrink: 0; }
+        a.hof-item strong { color: var(--accent-green); font-weight: 700; }
+        a.hof-item small { font-size: 0.85rem; color: var(--text-main); }
+
+        .education-container { display: flex; flex-direction: column; gap: 12px; }
+
         .edu-item {
-            margin-bottom: 0;
             background: linear-gradient(135deg, rgba(102, 252, 241, 0.05) 0%, rgba(155, 81, 224, 0.05) 100%);
             padding: 18px;
             border-radius: 8px;
@@ -299,35 +218,68 @@
             border-left-color: var(--accent-green);
         }
 
-        .edu-item:last-child {
-            margin-bottom: 0;
+        .edu-title { color: var(--text-bright); font-weight: 700; font-size: 1rem; margin-bottom: 6px; }
+        .edu-school { color: var(--accent-blue); font-size: 0.85rem; font-weight: 500; margin-bottom: 4px; }
+        .edu-inst { color: var(--accent-green); font-size: 0.9rem; margin: 6px 0; }
+        .edu-date { font-size: 0.8rem; color: #8892b0; font-family: 'Fira Code', monospace; }
+
+        /* Modal TryHackMe */
+        dialog#thm-modal {
+            margin: auto;
+            width: min(92vw, 440px);
+            background: var(--card-bg);
+            color: var(--text-main);
+            border: 1px solid rgba(0, 255, 102, 0.35);
+            border-radius: 10px;
+            padding: 24px;
+            box-shadow: 0 0 40px rgba(0, 255, 102, 0.15);
         }
 
-        .edu-title {
-            color: var(--text-bright);
-            font-weight: 700;
+        dialog#thm-modal::backdrop { background: rgba(0, 0, 0, 0.75); }
+
+        .modal-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
+        .modal-head h3 { font-family: 'Fira Code', monospace; color: var(--text-bright); font-size: 1.1rem; }
+        .modal-head h3::before { content: '> '; color: var(--accent-green); }
+
+        .modal-close {
+            background: none;
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            border-radius: 4px;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
             font-size: 1rem;
-            margin-bottom: 6px;
         }
+        .modal-close:hover { color: var(--accent-green); border-color: var(--accent-green); }
 
-        .edu-school {
-            color: var(--accent-blue);
-            font-size: 0.85rem;
-            font-weight: 500;
-            margin-bottom: 4px;
+        .modal-option {
+            display: block;
+            text-decoration: none;
+            background: rgba(102, 252, 241, 0.05);
+            border: 1px solid rgba(102, 252, 241, 0.2);
+            border-left: 3px solid var(--accent-blue);
+            border-radius: 8px;
+            padding: 14px 16px;
+            margin-bottom: 12px;
+            transition: all 0.25s ease;
         }
+        .modal-option:last-child { margin-bottom: 0; }
+        .modal-option:hover { border-left-color: var(--accent-green); background: rgba(0, 255, 102, 0.08); transform: translateX(3px); }
+        .modal-option strong { display: block; color: var(--text-bright); font-family: 'Fira Code', monospace; font-size: 0.95rem; }
+        .modal-option span { font-size: 0.85rem; color: var(--text-main); }
 
-        .edu-date {
-            font-size: 0.8rem;
-            color: #8892b0;
-            font-family: 'Fira Code', monospace;
+        .room-img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 12px;
+            border: 1px solid rgba(155, 81, 224, 0.5);
+            transition: box-shadow 0.25s ease;
         }
-        
-        .education-container {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
+        .modal-option:hover .room-img { box-shadow: 0 0 18px rgba(255, 0, 153, 0.45); }
 
         footer {
             text-align: center;
@@ -351,17 +303,36 @@
                 <span class="badge">SOC & CTI</span>
                 <span class="badge">Offensive Security (FIAP)</span>
             </div>
+            <!-- Mesmos 4 perfis, na mesma ordem, do topo e da seção "Plataformas & Perfis" -->
             <div class="cta-buttons">
-                <a href="https://www.linkedin.com/in/bruno-venzon" target="_blank" class="btn">LinkedIn</a>
-                <a href="https://github.com/bvenzon" target="_blank" class="btn">GitHub</a>
-                <a href="https://hackerone.com/bvenzon" target="_blank" class="btn">HackerOne</a>
+                <a href="https://www.linkedin.com/in/bruno-venzon" target="_blank" rel="noopener" class="btn">LinkedIn</a>
+                <a href="https://github.com/bvenzon" target="_blank" rel="noopener" class="btn">GitHub</a>
+                <a href="https://hackerone.com/bvenzon" target="_blank" rel="noopener" class="btn">HackerOne</a>
+                <button type="button" class="btn" data-open-thm>TryHackMe</button>
             </div>
         </header>
 
         <section class="main-content">
             <h2>Sobre Mim</h2>
-            <p>Profissional de Cibersegurança com experiência em Security Operations Center (SOC), atuando principalmente em Blue Team, Gestão e Resposta a Incidentes, Monitoramento de Segurança e Threat Intelligence. Possuo vivência prática na identificação, análise, investigação, contenção e resposta a eventos de segurança, com foco na redução de riscos e proteção de ambientes críticos.</p>
-            <p>Ao longo da minha trajetória, desenvolvi uma visão analítica e orientada à investigação, combinando forte atuação defensiva com estudos e prática em Offensive Security, Red Team, Web Security e Bug Bounty.</p>
+            <p>Profissional de Cibersegurança com experiência em Security Operations Center (SOC), atuando em Blue Team, Gestão e Resposta a Incidentes, Monitoramento de Segurança e Threat Intelligence. Tenho vivência prática na identificação, análise, investigação, contenção e resposta a eventos de segurança, com foco na redução de riscos e na proteção de ambientes críticos.</p>
+            <p>Atuo em operações de segurança com SIEM, EDR/XDR e ferramentas de monitoramento: análise de alertas, investigação de indicadores de comprometimento (IOCs), correlação de eventos, enriquecimento de incidentes e apoio à contenção de ameaças. Em Threat Intelligence, trabalho com coleta, análise e contextualização de ameaças, integração de fontes e aplicação de CTI no dia a dia do SOC, para uma detecção mais eficiente e uma resposta mais proativa.</p>
+            <p>Também desenvolvo automações e integrações entre ferramentas, com scripts que reduzem tarefas manuais e aumentam a eficiência das operações defensivas. Combino essa base em Blue Team com estudos e prática em Offensive Security, Red Team, Web Security e Bug Bounty, buscando enxergar vulnerabilidades e ameaças sob diferentes perspectivas.</p>
+        </section>
+
+        <section class="main-content">
+            <h2>Principais Áreas</h2>
+            <ul class="focus-list">
+                <li>Blue Team & Security Operations</li>
+                <li>Incident Response</li>
+                <li>Threat Intelligence / CTI</li>
+                <li>Threat Hunting</li>
+                <li>SIEM / EDR / XDR</li>
+                <li>Análise de IOCs e eventos de segurança</li>
+                <li>Automação de processos de segurança</li>
+                <li>Linux & Networking</li>
+                <li>Offensive Security & Red Team</li>
+                <li>Web Security & Bug Bounty</li>
+            </ul>
         </section>
 
         <section class="main-content">
@@ -369,13 +340,15 @@
             <div class="skills-grid">
                 <span class="skill-tag">Incident Response</span>
                 <span class="skill-tag">Blue Team Ops</span>
-                <span class="skill-tag">SIEM & EDR</span>
+                <span class="skill-tag">SIEM & EDR/XDR</span>
                 <span class="skill-tag">Threat Hunting</span>
                 <span class="skill-tag">IOC Analysis</span>
                 <span class="skill-tag">Gestão de Vulnerabilidades</span>
                 <span class="skill-tag">Threat Intelligence (CTI)</span>
                 <span class="skill-tag">Automação (Python)</span>
+                <span class="skill-tag">Linux & Networking</span>
                 <span class="skill-tag">Offensive Security</span>
+                <span class="skill-tag">Web Security</span>
                 <span class="skill-tag">Bug Bounty</span>
             </div>
         </section>
@@ -384,11 +357,11 @@
             <h2>Artigos & Publicações</h2>
             <ul>
                 <li>
-                    <a href="https://www.scunna.com/diagnostico-de-risco-por-dentro-das-ameacas-digitais-no-setor-de-saude/" target="_blank" class="link-item">Diagnóstico de risco: por dentro das ameaças digitais no setor de saúde</a>
+                    <a href="https://www.scunna.com/diagnostico-de-risco-por-dentro-das-ameacas-digitais-no-setor-de-saude/" target="_blank" rel="noopener" class="link-item">Diagnóstico de risco: por dentro das ameaças digitais no setor de saúde</a>
                     <p class="item-desc">Análise sobre ameaças emergentes e o impacto de incidentes no setor da saúde.</p>
                 </li>
                 <li>
-                    <a href="https://www.scunna.com/honeypot-mais-que-armadilhas-inteligencia-de-ameacas/" target="_blank" class="link-item">Honeypot: mais que armadilhas, inteligência de ameaças</a>
+                    <a href="https://www.scunna.com/honeypot-mais-que-armadilhas-inteligencia-de-ameacas/" target="_blank" rel="noopener" class="link-item">Honeypot: mais que armadilhas, inteligência de ameaças</a>
                     <p class="item-desc">Explorando o papel dos honeypots na coleta ativa de dados e inteligência de ameaças (CTI).</p>
                 </li>
             </ul>
@@ -398,16 +371,20 @@
             <h2>Plataformas & Perfis</h2>
             <ul>
                 <li>
-                    <a href="https://hackerone.com/bvenzon" target="_blank" class="link-item">HackerOne</a>
+                    <a href="https://www.linkedin.com/in/bruno-venzon" target="_blank" rel="noopener" class="link-item">LinkedIn</a>
+                    <p class="item-desc">Trajetória profissional, experiências em SOC e conexões da área de cibersegurança.</p>
+                </li>
+                <li>
+                    <a href="https://github.com/bvenzon" target="_blank" rel="noopener" class="link-item">GitHub</a>
+                    <p class="item-desc">Repositórios de scripts de automação, ferramentas defensivas e utilitários em Python.</p>
+                </li>
+                <li>
+                    <a href="https://hackerone.com/bvenzon" target="_blank" rel="noopener" class="link-item">HackerOne</a>
                     <p class="item-desc">Atividades em Bug Bounty e submissões em programas de divulgação coordenada de vulnerabilidades (VDP).</p>
                 </li>
                 <li>
-                    <a href="https://tryhackme.com/p/BVENZON" target="_blank" class="link-item">TryHackMe</a>
-                    <p class="item-desc">Estatísticas de laboratórios, resolução de salas e evolução técnica contínua.</p>
-                </li>
-                <li>
-                    <a href="https://github.com/bvenzon" target="_blank" class="link-item">GitHub</a>
-                    <p class="item-desc">Repositórios de scripts de automação, ferramentas defensivas e utilitários em Python.</p>
+                    <button type="button" class="link-item" data-open-thm>TryHackMe</button>
+                    <p class="item-desc">Meu perfil, estatísticas de laboratórios e a room que criei: Money Heist 2025.</p>
                 </li>
             </ul>
         </section>
@@ -416,13 +393,13 @@
             <section class="hof-section">
                 <h2>🏆 Hall da Fama</h2>
                 <div class="hof-list">
-                    <a href="https://csirt.globo/divulgacao-responsavel" target="_blank" class="hof-item" style="text-decoration: none; cursor: pointer;">
+                    <a href="https://csirt.globo/divulgacao-responsavel" target="_blank" rel="noopener" class="hof-item">
                         <span>🌍</span>
-                        <div><strong>Globo</strong><br><span style="font-size: 0.85rem; color: var(--text-main);">Reconhecimento em VDP</span></div>
+                        <div><strong>Globo</strong><br><small>Reconhecimento em VDP</small></div>
                     </a>
-                    <a href="https://www.ericsson.com/en/about-us/security/vulnerability-reporting-form/acknowledgements" target="_blank" class="hof-item" style="text-decoration: none; cursor: pointer;">
+                    <a href="https://www.ericsson.com/en/about-us/security/vulnerability-reporting-form/acknowledgements" target="_blank" rel="noopener" class="hof-item">
                         <span>📡</span>
-                        <div><strong>Ericsson</strong><br><span style="font-size: 0.85rem; color: var(--text-main);">Reconhecimento em VDP</span></div>
+                        <div><strong>Ericsson</strong><br><small>Reconhecimento em VDP</small></div>
                     </a>
                 </div>
             </section>
@@ -433,13 +410,13 @@
                     <div class="edu-item">
                         <div class="edu-title">📚 Pós-graduação Lato Sensu</div>
                         <div class="edu-school">Offensive Cyber Security - Red Team Operations</div>
-                        <div style="color: var(--accent-green); font-size: 0.9rem; margin: 6px 0;">FIAP</div>
+                        <div class="edu-inst">FIAP</div>
                         <div class="edu-date">Jan 2026 – Dez 2026</div>
                     </div>
                     <div class="edu-item">
                         <div class="edu-title">🎓 Bacharelado</div>
                         <div class="edu-school">Sistemas de Informação</div>
-                        <div style="color: var(--accent-green); font-size: 0.9rem; margin: 6px 0;">Universidade do Vale do Rio dos Sinos (Unisinos)</div>
+                        <div class="edu-inst">Universidade do Vale do Rio dos Sinos (Unisinos)</div>
                         <div class="edu-date">2022 – 2025</div>
                     </div>
                 </div>
@@ -450,6 +427,38 @@
             <p>© 2026 Bruno Teixeira Venzon. Todos os direitos reservados.</p>
         </footer>
     </div>
+
+    <!-- Modal TryHackMe: Perfil ou Room -->
+    <dialog id="thm-modal" aria-labelledby="thm-title">
+        <div class="modal-head">
+            <h3 id="thm-title">TryHackMe</h3>
+            <button type="button" class="modal-close" id="thm-close" aria-label="Fechar">✕</button>
+        </div>
+        <a class="modal-option" href="https://tryhackme.com/p/BVENZON" target="_blank" rel="noopener">
+            <strong>👤 Perfil</strong>
+            <span>Estatísticas, salas resolvidas e evolução técnica.</span>
+        </a>
+        <a class="modal-option" href="https://tryhackme.com/room/moneyheist2025" target="_blank" rel="noopener">
+            <img class="room-img" src="632a3315537e5300566db635-1749339644982.png" alt="Room Money Heist 2025 no TryHackMe" loading="lazy">
+            <strong>🎯 Room: Money Heist 2025</strong>
+            <span>Sala criada por mim. Clique para jogar.</span>
+        </a>
+    </dialog>
+
+    <script>
+        (function () {
+            var modal = document.getElementById('thm-modal');
+            document.querySelectorAll('[data-open-thm]').forEach(function (el) {
+                el.addEventListener('click', function () { modal.showModal(); });
+            });
+            document.getElementById('thm-close').addEventListener('click', function () { modal.close(); });
+            // Fecha ao clicar fora da caixa
+            modal.addEventListener('click', function (e) {
+                var r = modal.getBoundingClientRect();
+                if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) modal.close();
+            });
+        })();
+    </script>
 
 </body>
 </html>
